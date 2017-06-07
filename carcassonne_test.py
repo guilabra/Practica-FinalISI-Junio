@@ -512,6 +512,96 @@ No es necesario incluir mas.
             self.assertEqual(turnos_jugadores[i].nombre, 'Pedro')
             i = i + 3
 
+    #G Test para comprobar que el append inserta por detras
+    def comprobar_inicializar_jugadores(self):
+        jugadores = Partida().inicializar_jugadores(['Pedro', 'Juan', 'Felipe'])
+        self.assertEqual(jugadores[0], 'Juan')
+
+    #G Test que comprueba que se devuelve el jugador mas joven
+    def test_jugador_mas_joven(self):
+        nombre1 = 'Juan'
+        edad1 = '22'
+        jugador1 = [nombre1, edad1]
+
+        nombre2 = 'Pedro'
+        edad2 = '19'
+        jugador2 = [nombre2, edad2]
+
+        nombre3 = 'Felipe'
+        edad3 = '16'
+        jugador3 = [nombre3, edad3]
+
+        jugador = Partida().jugador_mas_joven([jugador1, jugador2, jugador3])
+        self.assertEqual(jugador[1], '16')
+
+    #G Test que comprueba la edad del jugador mas joven
+    def test_codigo_jugador_mas_joven(self):
+
+        nombre1 = 'Juan'
+        edad1 = '22'
+        jugador1 = [nombre1, edad1]
+
+        nombre2 = 'Pedro'
+        edad2 = '19'
+        jugador2 = [nombre2, edad2]
+
+        nombre3 = 'Felipe'
+        edad3 = '16'
+        jugador3 = [nombre3, edad3]
+
+        jugador = Partida().info_jugador_mas_joven([jugador1, jugador2, jugador3])
+
+
+        expected = """
+El jugador mas joven se llama Felipe. Es un adolescente de 16.
+"""
+        self.assertEqual(expected, jugador)
+
+    #G El jugador mas joven decide los turnos
+    def test_asignar_turnos_mas_joven(self):
+        i = 0
+        nombre1 = 'Juan'
+        edad1 = '22'
+        jugador1 = [nombre1, edad1]
+
+        nombre2 = 'Pedro'
+        edad2 = '19'
+        jugador2 = [nombre2, edad2]
+
+        nombre3 = 'Felipe'
+        edad3 = '16'
+        jugador3 = [nombre3, edad3]
+
+        jugador = Partida().jugador_mas_joven([jugador1, jugador2, jugador3])
+        #El jugador mas joven decide mezclar
+        orden_jugadores = Partida().jugador_decide_orden([jugador1, jugador2, jugador3])
+        turnos_jugadores = Partida().asignar_turnos(orden_jugadores)
+
+        self.assertEqual(turnos_jugadores[i], turnos_jugadores[i+3])
+
+    #G El jugador mas joven decide los turnos
+    def test_asignar_turnos_mas_joven2(self):
+        i = 0
+        nombre1 = 'Juan'
+        edad1 = '22'
+        jugador1 = [nombre1, edad1]
+
+        nombre2 = 'Pedro'
+        edad2 = '19'
+        jugador2 = [nombre2, edad2]
+
+        nombre3 = 'Felipe'
+        edad3 = '16'
+        jugador3 = [nombre3, edad3]
+
+        jugador = Partida().jugador_mas_joven([jugador1, jugador2, jugador3])
+        #El jugador mas joven decide mezclar
+        orden_jugadores = Partida().jugador_decide_orden([jugador1, jugador2, jugador3])
+        turnos_jugadores = Partida().asignar_turnos(orden_jugadores)
+
+        #el [0] es el nombre. Con este assertEqual quiero ver que el nombre del jugador del turno 0
+        #es el mismo que el nombre del jugador del turno 3 (al haber 3 jugadores)
+        self.assertEqual(turnos_jugadores[i][0], turnos_jugadores[i+3][0])
 
   #Test para comprobar si un jugador puede introducir un meeple a una pieza del tablero
     def test_introducir_meeple(self):

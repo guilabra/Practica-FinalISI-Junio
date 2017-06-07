@@ -46,6 +46,39 @@ class Partida:
             lista_jugadores.append(Jugador(nombre))
         return lista_jugadores
 
+    #G Mezcla los jugadores(cambia el orden)
+    def jugador_decide_orden(self, jugadores):
+        random.shuffle(jugadores)
+
+        return jugadores
+
+    #G Inicializa la lista por la edad de los jugadores.
+    def jugador_mas_joven(self, jugadores):
+        i = 0
+        for jugador in jugadores:
+            if i==0:
+                edad = jugador[1]
+                jugador_mas_joven = jugador
+            elif jugador[1] < edad:
+                edad = jugador[1]
+                jugador_mas_joven = jugador
+            i += 1
+        return jugador_mas_joven
+
+    #G Codigo del jugador con menos edad
+    def info_jugador_mas_joven(self, jugadores):
+        i = 0
+        for jugador in jugadores:
+            if i==0:
+                edad = jugador[1]
+                jugador_mas_joven = jugador
+            elif jugador[1] < edad:
+                edad = jugador[1]
+                jugador_mas_joven = jugador
+            i += 1
+        return "\nEl jugador mas joven se llama "+ jugador_mas_joven[0]+".\
+ Es un adolescente de " + jugador_mas_joven[1]+ ".\n"
+
     # Inicializa la baraja
     def inicializar_baraja(self):
         numero_tipos_pieza = 19
