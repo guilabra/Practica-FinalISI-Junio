@@ -460,6 +460,20 @@ No es necesario incluir mas.
         self.assertEqual(puntuacion2 + 100, jugadores[1].puntuacion)
         self.assertEqual(puntuacion3 + 200, jugadores[2].puntuacion)
 
+    #G Test para cambiar el nombre del jugador
+    def test_cambiar_nombre(self):
+        jugador = Jugador('Guillermo')
+        #indice_jugador = partida.buscar_ind_jugador(jugador.nombre)
+        jugador.cambiar_nombre('Juan')
+        self.assertEqual('Juan', jugador.nombre)
+
+    #G Test para asignar la edad al jugador
+    def test_asignar_edad(self):
+        jugador = Jugador('Guillermo')
+
+        jugador.asignar_edad('22')
+        self.assertEqual('22', jugador.edad)
+
     #Test para comprobar que se ordenan los jugadores en funcion de su puntuacion
     def test_ordenar_jug_puntos(self):
         jugador1 = 'Paco'

@@ -586,12 +586,21 @@ class Jugador:
         self.nombre = nombre
         self.meeples = 8  # meeples disponibles
         self.puntuacion = 0
+        self.edad = 0
 
 
     #Actualizar puntuacion
     def actualizar_puntuacion(self, puntos):
         self.puntuacion += puntos
         return self
+
+    #Cambiar nombre
+    def cambiar_nombre(self, nombre):
+        self.nombre = nombre
+
+    #Asignar edad
+    def asignar_edad(self, edad):
+        self.edad = edad
 
 
 class Pieza_terreno:
