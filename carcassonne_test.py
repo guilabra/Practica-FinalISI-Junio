@@ -3,6 +3,33 @@ import unittest
 
 class Test_basico(unittest.TestCase):
 
+    #G Test que comprueba que el codigo cuando hay un jugador es el mismo.
+    def test_unjugador_jugando(self):
+        jugador =['Ana']
+        expected = """
+Tenemos un solo jugador participando en el carcassonne, su nombre es Ana.
+Debemos incluir mas.
+"""
+        self.assertEqual(expected, Partida().jugadores_jugando(jugador))
+
+    #G Test que comprueba que el codigo cuando hay dos jugadores es el mismo.
+    def test_dosjugadores_jugando(self):
+        jugadores =['Ana', 'Juan']
+        expected = """
+Tenemos dos jugadores participando en el carcassonne, sus nombres son Ana y Juan.
+Podemos incluir mas.
+"""
+        self.assertEqual(expected, Partida().jugadores_jugando(jugadores))
+
+    #G Test que comprueba que el codigo cuando hay multiples jugadores es el mismo.
+    def test_multiplesjugadores_jugando(self):
+        jugadores =['Ana', 'Juan', 'Gonzalo']
+        expected = """
+Tenemos bastantes jugadores participando en el carcassonne, sus nombres son """+ jugadores[0]+", "+jugadores[1]+" y "+jugadores[2]+""".
+No es necesario incluir mas.
+"""
+        self.assertEqual(expected, Partida().jugadores_jugando(jugadores))
+
     # Test que comprueba que el numero de jugadores es correcto
     def test_comprobar_numero_jugadores(self):
         jugadores = ['Paco','Ana']

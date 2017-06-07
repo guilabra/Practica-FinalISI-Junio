@@ -3,6 +3,23 @@ import collections
 
 class Partida:
 
+    #G Comprueba que el codigo sea el correcto en funcion del numero de jugadores.
+    def jugadores_jugando(self, nombres_jugadores):
+
+        numero_jugadores = len(nombres_jugadores)
+
+        if (numero_jugadores == 1):
+
+            return "\nTenemos un solo jugador participando en el carcassonne, su nombre es "+ nombres_jugadores[0]+".\
+\nDebemos incluir mas.\n"
+
+        elif (numero_jugadores == 2):
+            return "\nTenemos dos jugadores participando en el carcassonne, sus nombres son "+ nombres_jugadores[0]+" y "+nombres_jugadores[1]+".\
+\nPodemos incluir mas.\n"
+        else:
+            return "\nTenemos bastantes jugadores participando en el carcassonne, sus nombres son "+ nombres_jugadores[0]+", "+nombres_jugadores[1]+" y "+nombres_jugadores[2]+".\
+\nNo es necesario incluir mas.\n"
+
     # Comprueba que el numero de jugadores sea correcto
     def num_jug_correcto(self, nombres_jugadores):
         num_maximo_jugadores = 4
