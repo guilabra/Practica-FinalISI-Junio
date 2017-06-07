@@ -1,0 +1,19 @@
+El objetivo de este fichero es explicar las funciones realizadas.
+Para enero, realicé los métodos actualizar_puntuacion y asignar_turnos con sus correspondientes tests.
+
+Las nuevas incorporaciones a la práctica de enero son:
+
+1)El método jugadores_jugando con los tres tests que comprueban su funcionamiento.
+El objetivo de estos tests es que el código escrito sea el mismo que devuelve la función
+jugadores_jugando, variando en función del número de jugadores.
+
+2)Los métodos cambiar_nombre y asignar_edad, cada uno con su correspondiente test.
+Se añade en la clase jugador, con el objetivo de que se puedan cambiar el nombre de los jugadores
+y asignarles una edad.
+
+3)Los métodos jugador_mas_joven, info_jugador_mas_joven y jugador_decide_orden.
+Los tests que he realizado para comprobar su funcionamiento son: comprobar_inicializar_jugadores,
+test_jugador_mas_joven, test_codigo_jugador_mas_joven, test_asignar_turnos_mas_joven y
+test_asignar_turnos_mas_joven2.
+El objetivo de estos es calcular correctamente el jugador mas joven y que este decida
+el orden de los turnos, decidiendo siempre que sea al azar.
