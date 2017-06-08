@@ -45,6 +45,20 @@ No es necesario incluir mas.
         jugadores = ['Paco']
         self.assertFalse(Partida().num_jug_correcto(jugadores))
 
+    #G Test para comprobar que se devuelven los nombres correctamente
+    def test_comprobar_devuelve_nombres(self):
+        nombre1 = 'Diego'
+        edad1 = '19'
+        jugador1 = [nombre1, edad1]
+
+        nombre2 = 'Guillermo'
+        edad2 = '23'
+        jugador2 = [nombre2, edad2]
+
+        jugadores = [jugador1, jugador2]
+
+        self.assertEqual(['Diego', 'Guillermo'], Partida().devuelve_nombres_jugadores(jugadores))
+
     # Test que comprueba que los nombres no se repiten
     def test_comprobar_nombres(self):
         jugadores = ['Paco','Ana','Maria']
@@ -573,10 +587,11 @@ El jugador mas joven se llama Felipe. Es un adolescente de 16.
         jugador3 = [nombre3, edad3]
 
         jugador = Partida().jugador_mas_joven([jugador1, jugador2, jugador3])
-        #El jugador mas joven decide mezclar
+        #El jugador mas joven decide mezclar, ya que aqui no lo podemos hacer segun las agujas del reloj.
         orden_jugadores = Partida().jugador_decide_orden([jugador1, jugador2, jugador3])
         turnos_jugadores = Partida().asignar_turnos(orden_jugadores)
 
+        #turnos_jugadores nos da el orden de los jugadores(cada jugador con su nombre y edad)
         self.assertEqual(turnos_jugadores[i], turnos_jugadores[i+3])
 
     #G El jugador mas joven decide los turnos

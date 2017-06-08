@@ -17,3 +17,6 @@ test_jugador_mas_joven, test_codigo_jugador_mas_joven, test_asignar_turnos_mas_j
 test_asignar_turnos_mas_joven2.
 El objetivo de estos es calcular correctamente el jugador mas joven y que este decida
 el orden de los turnos, decidiendo siempre que sea al azar.
+
+4)El método devuelve_nombres_jugadores y su test correspondiente. Necesito este método
+al haber metido nombre y edad en cada jugador.
